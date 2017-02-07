@@ -8,7 +8,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.neosoft.com.recycleviewdemo.R;
+import org.neosoft.com.JHU.R;
 
 /**
  * A simple {@link Fragment} subclass.
