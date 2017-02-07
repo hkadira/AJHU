@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_splash"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/gradient"
+    tools:context="org.neosoft.com.JHU.activity.SplashActivity">
+
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:src="@drawable/jhu_tag" />
+
+    <ImageButton
+        android:id="@+id/btnEnglish"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/rounded_button"
+        android:padding="15dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/handfan"/>
+
+    <ImageButton
+        android:id="@+id/btnSinhala"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_alignParentBottom="true"
+        android:layout_margin="30dp"
+        android:background="@drawable/rounded_button"
+        android:padding="15dp"
+        android:scaleType="centerCrop"
+        android:src="@drawable/handfan"
+        android:text="සිංහල" />
+
+    <TextView
+        android:text="සිංහල"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/btnSinhala"
+        android:layout_alignRight="@+id/btnSinhala"
+        android:layout_alignEnd="@+id/btnSinhala"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/textView" />
+
+    <TextView
+        android:text="English"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@id/btnEnglish"
+        android:layout_alignRight="@id/btnEnglish"
+        android:layout_alignEnd="@id/btnEnglish"
+        android:textColor="@android:color/black"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:id="@+id/textView2" />
+
+</RelativeLayout>

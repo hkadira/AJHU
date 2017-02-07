@@ -1,0 +1,31 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".MainActivity">
+
+    <item
+        android:id="@+id/gallery"
+        android:icon="@android:drawable/ic_dialog_dialer"
+        app:showAsAction="ifRoom"
+        android:title="Compose">
+
+        <menu>
+            <item android:id="@+id/signin"
+                android:icon="@android:drawable/ic_menu_info_details"
+                app:showAsAction="collapseActionView"
+                android:title="Sign In" />
+
+            <item android:id="@+id/about"
+                android:icon="@android:drawable/ic_menu_help"
+                app:showAsAction="collapseActionView"
+                android:title="about" />
+
+            <item android:id="@+id/exit"
+                android:icon="@android:drawable/ic_delete"
+                app:showAsAction="collapseActionView"
+                android:title="Exit" />
+
+        </menu>
+    </item>
+</menu>
+
