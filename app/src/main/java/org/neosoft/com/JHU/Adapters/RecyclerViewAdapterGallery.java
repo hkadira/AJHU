@@ -1,4 +1,4 @@
-package org.neosoft.com.JHU.Adapters;
+package org.neosoft.com.JHU.adapters;
 
 /**
  * Created by Neyomal on 12/21/2016.

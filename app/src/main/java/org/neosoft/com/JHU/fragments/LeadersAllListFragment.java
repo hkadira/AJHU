@@ -9,7 +9,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.neosoft.com.JHU.Adapters.MyAdapterLeaders;
+import org.neosoft.com.JHU.adapters.MyAdapterLeaders;
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.activity.LeaderboardItemObject;
 

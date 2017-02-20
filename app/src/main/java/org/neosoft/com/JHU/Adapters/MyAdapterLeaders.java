@@ -1,4 +1,4 @@
-package org.neosoft.com.JHU.Adapters;
+package org.neosoft.com.JHU.adapters;
 
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.widget.RecyclerView;

@@ -18,7 +18,7 @@
             <item android:id="@+id/about"
                 android:icon="@android:drawable/ic_menu_help"
                 app:showAsAction="collapseActionView"
-                android:title="about" />
+                android:title="About" />
 
             <item android:id="@+id/exit"
                 android:icon="@android:drawable/ic_delete"

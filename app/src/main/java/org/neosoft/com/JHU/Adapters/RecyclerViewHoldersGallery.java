@@ -1,4 +1,4 @@
-package org.neosoft.com.JHU.Adapters;
+package org.neosoft.com.JHU.adapters;
 
 /**
  * Created by Neyomal on 12/21/2016.
@@ -15,6 +15,7 @@ import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.activity.MainDashboardActivity;
 import org.neosoft.com.JHU.fragments.HistoryFragment;
 import org.neosoft.com.JHU.fragments.LeadersAllListFragment;
+import org.neosoft.com.JHU.fragments.LoginFragment;
 
 public class RecyclerViewHoldersGallery extends RecyclerView.ViewHolder implements View.OnClickListener{
 
@@ -43,6 +44,12 @@ public class RecyclerViewHoldersGallery extends RecyclerView.ViewHolder implemen
             case 2:
                 //transaction.replace(R.id.container, new TestFragment());
                 transaction.replace(R.id.container, new LeadersAllListFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
+            case 3:
+                //transaction.replace(R.id.container, new TestFragment());
+                transaction.replace(R.id.container, new LoginFragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
                 break;

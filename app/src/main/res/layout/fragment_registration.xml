@@ -1,0 +1,119 @@
+<layout>
+
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context="org.neosoft.com.JHU.fragments.RegistrationFragment">
+
+        <!-- TODO: Update blank fragment layout -->
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="@color/colorAccent"
+            android:gravity="center"
+            android:text="@string/MR" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/edTxtName"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:layout_width="match_parent"
+                android:ems="10"
+                android:hint="@string/Name"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edTxtNIC"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:hint="@string/NIC"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edTxtPwd"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:layout_marginTop="5dp"
+                android:hint="@string/Pwd"
+                android:inputType="textPassword" />
+
+            <EditText
+                android:id="@+id/edTxtPhone"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:layout_marginTop="5dp"
+                android:hint="@string/Phone"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edTxtEmail"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:layout_marginTop="5dp"
+                android:hint="@string/Email"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edTxtAdd"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:hint="@string/Address"
+                android:layout_marginTop="5dp"
+                android:inputType="textPersonName" />
+
+            <EditText
+                android:id="@+id/edTxtDistrict"
+                android:layout_width="match_parent"
+                android:paddingLeft="10dp"
+                android:background="@drawable/roundedtextbox"
+                android:layout_height="30dp"
+                android:ems="10"
+                android:layout_marginTop="5dp"
+                android:hint="@string/District"
+                android:inputType="textPersonName" />
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/btnMemebership"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/Apply" />
+
+        <Button
+            android:id="@+id/btnCancel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="2dp"
+            android:background="@color/colorAccent"
+            android:text="@string/Cancel" />
+    </LinearLayout>
+</layout>

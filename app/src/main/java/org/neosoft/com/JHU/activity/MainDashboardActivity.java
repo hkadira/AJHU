@@ -1,6 +1,7 @@
 package org.neosoft.com.JHU.activity;
 
 import android.os.Bundle;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.fragments.GalleryFragment;
+import org.neosoft.com.JHU.fragments.LoginFragment;
 
 public class MainDashboardActivity extends AppCompatActivity {
 
@@ -43,6 +45,12 @@ public class MainDashboardActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.gallery) {
             return true;
+        }
+        if (id == R.id.signin) {
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.replace(R.id.container, new LoginFragment());
+            transaction.addToBackStack(null);
+            transaction.commit();
         }
         if(id == R.id.about){
             Toast.makeText(MainDashboardActivity.this, "About menu", Toast.LENGTH_LONG).show();

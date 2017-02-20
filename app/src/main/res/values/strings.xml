@@ -17,12 +17,12 @@
     <string name="values">Values</string>
     <string name="history">History</string>
     <string name="leaders">Leaders</string>
-    <string name="news">News</string>
+    <string name="news">Login</string>
     <string name="membership">Membership</string>
     <string name="poll">Poll</string>
     <string name="events">Events</string>
     <string name="profile">Profile</string>
-    <string name="feeds">Feeds</string>
+    <string name="feeds">News</string>
     //Leaders
     <string name="pathali">Pathali Champika Ranawaka</string>
     <string name="rathana">Athuraliye Rathana Thero</string>
@@ -31,4 +31,23 @@
 
     //JHU history
     <string name="historyAll">The Jathika Hela Urumaya (Sinhalese: ජාතික හෙළ උරුමය, Tamil: ஜாதிக ஹெல உறுமய, often approximated in English as National Heritage Party) is a Right-wing Nationalist political party in Sri Lanka. The JHU was launched in February, 2004 by the lay-based, Sinhala nationalist political party Sihala Urumaya. Founding members include Kolonnawe Sumangala Thero, Uduwe Dhammaloka Thero, Ellawala Medhananda Thero, Dr. Omalpe Sobhitha Thero, Athuraliye Ratana Thero and Thilak Karunaratne.</string>
+
+    //Sign In Page
+    <string name="Register">Become a member</string>
+    <string name="SignIn">Sign In</string>
+
+    //Registration Page
+    <string name="MR">Memeber Registration</string>
+    <string name="Name">Name</string>
+    <string name="NIC">NIC</string>
+    <string name="Pwd">Password</string>
+    <string name="Phone">Phone</string>
+    <string name="Email">Email</string>
+    <string name="Address">Address</string>
+    <string name="District">District</string>
+
+    <string name="Apply">Apply for Membership</string>
+    <string name="Cancel">Cancel</string>
+
+
 </resources>
