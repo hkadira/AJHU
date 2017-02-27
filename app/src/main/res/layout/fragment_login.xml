@@ -3,72 +3,75 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:gravity="center"
     android:background="@drawable/gradient"
+    android:gravity="center"
     tools:context="org.neosoft.com.JHU.fragments.LoginFragment">
 
 
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="200dp"
-        android:layout_height="200dp"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/five" />
-
-    <Button
-        android:id="@+id/btnRegister"
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/btnSubmit"
-        android:layout_alignLeft="@+id/btnSubmit"
-        android:layout_alignRight="@+id/btnSubmit"
-        android:layout_alignStart="@+id/btnSubmit"
-        android:background="@color/colorPrimary"
-        android:layout_below="@+id/btnSubmit"
-        android:layout_marginTop="5dp"
-        android:text="@string/Register" />
+        android:gravity="center"
+        android:orientation="vertical">
 
-    <EditText
-        android:id="@+id/edTxtNIC"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:layout_alignEnd="@+id/imageView"
-        android:layout_alignLeft="@+id/imageView"
-        android:layout_alignRight="@+id/imageView"
-        android:layout_alignStart="@+id/imageView"
-        android:layout_below="@+id/imageView"
-        android:textColor="@android:color/black"
-        android:layout_marginTop="23dp"
-        android:drawableRight="@android:drawable/radiobutton_on_background"
-        android:inputType="textPersonName"
-        android:text="@string/NIC" />
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="200dp"
+            android:layout_height="200dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentRight="true"
+            android:scaleType="centerCrop"
+            app:srcCompat="@drawable/five" />
 
-    <Button
-        android:id="@+id/btnSubmit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/edTxtPwd"
-        android:layout_alignLeft="@+id/edTxtPwd"
-        android:layout_alignRight="@+id/edTxtPwd"
-        android:layout_alignStart="@+id/edTxtPwd"
-        android:layout_below="@+id/edTxtPwd"
-        android:layout_marginTop="14dp"
-        android:background="@color/colorPrimary"
-        android:text="@string/SignIn" />
+        <EditText
+            android:id="@+id/edTxtUName"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:layout_alignEnd="@+id/imageView"
+            android:layout_alignLeft="@+id/imageView"
+            android:layout_alignRight="@+id/imageView"
+            android:layout_alignStart="@+id/imageView"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="23dp"
+            android:drawableRight="@android:drawable/radiobutton_on_background"
+            android:inputType="textPersonName"
+            android:text="@string/UName"
+            android:textColor="@android:color/black" />
 
-    <EditText
-        android:id="@+id/edTxtPwd"
-        android:layout_width="wrap_content"
-        android:layout_height="45dp"
-        android:hint="@string/Pwd"
-        android:textColor="@android:color/black"
-        android:drawableRight="@android:drawable/ic_partial_secure"
-        android:inputType="textPassword"
-        android:layout_alignLeft="@+id/edTxtNIC"
-        android:layout_alignStart="@+id/edTxtNIC"
-        android:layout_alignRight="@+id/edTxtNIC"
-        android:layout_alignEnd="@+id/edTxtNIC"
-        android:layout_below="@+id/edTxtNIC" />
+        <EditText
+            android:id="@+id/edTxtPwd"
+            android:layout_width="250dp"
+            android:layout_height="45dp"
+            android:drawableRight="@android:drawable/ic_partial_secure"
+            android:hint="@string/Pwd"
+            android:inputType="textPassword"
+            android:textColor="@android:color/black" />
+
+        <Button
+            android:id="@+id/btnSignIn"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/edTxtPwd"
+            android:layout_alignLeft="@+id/edTxtPwd"
+            android:layout_alignRight="@+id/edTxtPwd"
+            android:layout_alignStart="@+id/edTxtPwd"
+            android:layout_below="@+id/edTxtPwd"
+            android:layout_marginTop="14dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/SignIn" />
+
+        <Button
+            android:id="@+id/btnRegister"
+            android:layout_width="250dp"
+            android:layout_height="wrap_content"
+            android:layout_alignEnd="@+id/btnSubmit"
+            android:layout_alignLeft="@+id/btnSubmit"
+            android:layout_alignRight="@+id/btnSubmit"
+            android:layout_alignStart="@+id/btnSubmit"
+            android:layout_below="@+id/btnSubmit"
+            android:layout_marginTop="5dp"
+            android:background="@color/colorPrimary"
+            android:text="@string/Register" />
+
+    </LinearLayout>
 </RelativeLayout>

@@ -1,18 +1,17 @@
-package org.neosoft.com.JHU.service;
+package org.neosoft.com.JHU.data.api;
 
 
-import retrofit2.Call;
-import retrofit2.http.Field;
-import retrofit2.http.FormUrlEncoded;
-import retrofit2.http.POST;
+//import com.google.gson.annotations.SerializedName;
+
 
 /**
- * Created by Neyomal on 2/18/2017.
+ * Request using gson implementation
  */
 
-public interface APIService {
-    @FormUrlEncoded
+public interface servicesAPI {
+    /*@FormUrlEncoded
     @POST("/insert.php")
+        //Call<User> registerUser(
     Call<String> registerUser(
             @Field("name") String name,
             @Field("username") String username,
@@ -24,8 +23,8 @@ public interface APIService {
 
     @FormUrlEncoded
     @POST("/login.php")
+        //Call<User> registerUser(
     Call<String> loginUser(
             @Field("username") String username,
-            @Field("password") String password);
-
+            @Field("password") String password);*/
 }

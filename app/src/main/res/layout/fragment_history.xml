@@ -11,7 +11,9 @@
             android:scaleType="centerCrop"
             android:src="@drawable/jhu_tag"
             app:layout_heightPercent="20%"
-            app:layout_widthPercent="100%" />
+            app:layout_widthPercent="100%"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
 
         <ScrollView
             android:layout_width="match_parent"

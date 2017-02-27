@@ -10,14 +10,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import org.neosoft.com.JHU.adapters.RecyclerViewAdapterGallery;
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.activity.DashboardGalleryItemObject;
+import org.neosoft.com.JHU.adapters.RecyclerViewAdapterGallery;
 import org.neosoft.com.JHU.databinding.FragmentMainBinding;
 
 import java.util.ArrayList;
 import java.util.List;
-
 
 public class GalleryFragment extends Fragment {
     // TODO: Rename and change types of parameters

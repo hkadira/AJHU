@@ -34,13 +34,13 @@
                 android:inputType="textPersonName" />
 
             <EditText
-                android:id="@+id/edTxtNIC"
+                android:id="@+id/edTxtUName"
                 android:layout_width="match_parent"
                 android:paddingLeft="10dp"
                 android:background="@drawable/roundedtextbox"
                 android:layout_height="30dp"
                 android:ems="10"
-                android:hint="@string/NIC"
+                android:hint="@string/UName"
                 android:layout_marginTop="5dp"
                 android:inputType="textPersonName" />
 
@@ -101,7 +101,7 @@
         </LinearLayout>
 
         <Button
-            android:id="@+id/btnMemebership"
+            android:id="@+id/btnMembership"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="2dp"
