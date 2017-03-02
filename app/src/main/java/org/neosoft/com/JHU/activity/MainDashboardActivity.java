@@ -17,6 +17,7 @@ import org.neosoft.com.JHU.service.LocalRepository;
 public class MainDashboardActivity extends AppCompatActivity {
 
     private GridLayoutManager lLayout;
+    private GalleryFragment mainFragment;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,7 +28,13 @@ public class MainDashboardActivity extends AppCompatActivity {
         Toolbar topToolBar = (Toolbar)findViewById(R.id.toolbar);
         setSupportActionBar(topToolBar);
 
-        GalleryFragment mainFragment = new GalleryFragment();
+        // add back arrow to toolbar
+        if (getSupportActionBar() != null){
+            getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+            getSupportActionBar().setDisplayShowHomeEnabled(true);
+        }
+
+        mainFragment = new GalleryFragment();
         getSupportFragmentManager().beginTransaction()
                 .add(R.id.container, mainFragment).commit();
     }
@@ -43,6 +50,12 @@ public class MainDashboardActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
+        if (id == android.R.id.home) {
+            /*getSupportFragmentManager().beginTransaction()
+                    .add(R.id.container, mainFragment).commit();*/
+            getSupportFragmentManager().popBackStack();
+        }
+
         //noinspection SimplifiableIfStatement
         if (id == R.id.gallery) {
             return true;
@@ -52,8 +65,9 @@ public class MainDashboardActivity extends AppCompatActivity {
             transaction.replace(R.id.container, new LoginFragment());
             transaction.addToBackStack(null);
             transaction.commit();*/
-            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
             LocalRepository.getInstance().clearSession();
+            startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+
             finish();
         }
         if(id == R.id.about){

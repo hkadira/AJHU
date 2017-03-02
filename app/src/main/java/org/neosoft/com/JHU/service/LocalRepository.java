@@ -50,11 +50,15 @@ public class LocalRepository{
 
     public boolean isAuthenticated() {
         //return !TextUtils.isEmpty(mSharedPreferences.getString(AUTH_TOKEN, ""));
+        //Log.i("Is authenticated :", mSharedPreferences.getBoolean(AUTH_TOKEN, false));
         return mSharedPreferences.getBoolean(AUTH_TOKEN, false);
     }
 
     public boolean getAuthToken() {
         return mSharedPreferences.getBoolean(AUTH_TOKEN, false);
+    }
+    public String getUserName() {
+        return mSharedPreferences.getString(USERNAME, "no data");
     }
 
 }

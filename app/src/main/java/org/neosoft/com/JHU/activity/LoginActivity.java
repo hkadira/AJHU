@@ -3,12 +3,14 @@ package org.neosoft.com.JHU.activity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.service.LocalRepository;
@@ -21,6 +23,7 @@ import retrofit2.Response;
 public class LoginActivity extends AppCompatActivity {
     EditText txtUName,txtPassword;
     Button register,login;
+    CoordinatorLayout coordinatorLayout;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -29,11 +32,18 @@ public class LoginActivity extends AppCompatActivity {
         txtUName=(EditText) findViewById(R.id.edTxtUName);
         txtPassword=(EditText) findViewById(R.id.edTxtPwd);
 
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id
+                .coordinatorLayout);
+
         //TODO = remove later.
-        txtUName.setText("b1");
-        txtPassword.setText("c1");
+        //txtUName.setText("neo");
+        //txtPassword.setText("rncp");
 
         register =(Button) findViewById(R.id.btnRegister);
+
+        Log.i("User Name :", LocalRepository.getInstance().getUserName());
+        Log.i("User Auth Status :", String.valueOf(LocalRepository.getInstance().isAuthenticated()));
+
 
         register.setOnClickListener(new View.OnClickListener(){
             @Override
@@ -51,8 +61,18 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
+                //findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
+
                 String user = txtUName.getText().toString();
                 String pwd=   txtPassword.getText().toString();
+
+                if(TextUtils.isEmpty(txtUName.getText())){
+                    txtUName.setError("User name can't be empty");
+                }
+
+                if(TextUtils.isEmpty(txtPassword.getText())){
+                    txtPassword.setError("Password can't be empty");
+                }
 
                 userLogin(user,pwd);
                 login.setEnabled(false);
@@ -65,6 +85,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
     private void userLogin(final String sUNa, final String sPw) {
+        findViewById(R.id.progressBar).setVisibility(View.VISIBLE);
         NetworRepository.getApiService().loginUser(sUNa, sPw)
         //NetworRepository.getApiService().loginUser("b1", "c1")
                 .enqueue(new Callback<String>() {
@@ -74,14 +95,21 @@ public class LoginActivity extends AppCompatActivity {
                         Log.i("Response", response.body().toString());
                         //Toast.makeText()
                         if (response.isSuccessful()) {
-                            if (response.body() != null) {
+                            if (response.body().equals("Success!")) {
                                 Log.i("onSuccessLogin", response.body().toString());
-                                Toast.makeText(getApplicationContext(),"Login successfull", Toast.LENGTH_LONG).show();
+                                Log.i("onSuccessUserName", sUNa);
+                                Log.i("onSuccessPwd", sPw);
+                                //Toast.makeText(getApplicationContext(),"Login successfull", Toast.LENGTH_LONG).show();
+                                snackBarMessage("Login successfull");
                                 LocalRepository.getInstance().saveUser(sUNa,sPw, true);
                                 startActivity(new Intent(getApplicationContext(),MainDashboardActivity.class));
                                 finish();
                             } else {
-                                Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
+                                Log.i("onInvalidLogin", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
+                                login.setEnabled(true);
+                                findViewById(R.id.progressBar).setVisibility(View.GONE);
+                                snackBarMessage("Invalid user login");
+                                //Toast.makeText(getApplicationContext(),"Invalid Login", Toast.LENGTH_LONG).show();
                             }
                         }
                     }
@@ -90,8 +118,17 @@ public class LoginActivity extends AppCompatActivity {
                     public void onFailure(Call<String> call, Throwable t) {
                         Log.i("onFailure", t.toString());
                         t.printStackTrace();
-                        Toast.makeText(getApplicationContext(),"Invalid login", Toast.LENGTH_LONG).show();
+                        snackBarMessage("Network connection error");
+                        //Toast.makeText(getApplicationContext(),"Unable to connect to internet", Toast.LENGTH_LONG).show();
+                        login.setEnabled(true);
+                        findViewById(R.id.progressBar).setVisibility(View.GONE);
                     }
                 });
+    }
+
+    public void snackBarMessage(String message){
+        Snackbar snackbar = Snackbar
+                .make(coordinatorLayout, message , Snackbar.LENGTH_LONG);
+        snackbar.show();
     }
 }
