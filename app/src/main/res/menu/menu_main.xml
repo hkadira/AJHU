@@ -10,10 +10,10 @@
         android:title="Compose">
 
         <menu>
-            <item android:id="@+id/signin"
+            <item android:id="@+id/signout"
                 android:icon="@android:drawable/ic_menu_info_details"
                 app:showAsAction="collapseActionView"
-                android:title="Sign In" />
+                android:title="Sign Out" />
 
             <item android:id="@+id/about"
                 android:icon="@android:drawable/ic_menu_help"

@@ -1,15 +1,14 @@
-package org.neosoft.com.JHU.fragments;
+package org.neosoft.com.JHU.activity;
 
 
+import android.content.Intent;
 import android.os.Bundle;
-import android.support.v4.app.Fragment;
-import android.support.v4.app.FragmentTransaction;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.service.LocalRepository;
@@ -19,34 +18,36 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class LoginFragment extends Fragment {
+public class LoginActivity extends AppCompatActivity {
     EditText txtUName,txtPassword;
     Button register,login;
-    View view;
 
-    public View onCreateView(LayoutInflater inflater, ViewGroup container,
-                             Bundle savedInstanceState) {
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_login);
 
-        view = inflater.inflate(R.layout.fragment_login, container, false);
-        txtUName=(EditText) view.findViewById(R.id.edTxtUName);
-        txtPassword=(EditText) view.findViewById(R.id.edTxtPwd);
+        txtUName=(EditText) findViewById(R.id.edTxtUName);
+        txtPassword=(EditText) findViewById(R.id.edTxtPwd);
 
         //TODO = remove later.
         txtUName.setText("b1");
         txtPassword.setText("c1");
 
-        register =(Button) view.findViewById(R.id.btnRegister);
+        register =(Button) findViewById(R.id.btnRegister);
+
         register.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
-                final FragmentTransaction ft = getFragmentManager().beginTransaction();
+                /*final FragmentTransaction ft = getFragmentManager().beginTransaction();
                 ft.replace(R.id.container, new RegistrationFragment());
-                ft.commit();
-                //Toast.makeText(getActivity(),"Registration Form",Toast.LENGTH_SHORT).show();
+                ft.commit();*/
+                //Toast.makeText(getApplicationContext(),"Registration Form",Toast.LENGTH_SHORT).show();
+
+                startActivity(new Intent(getApplicationContext(),RegistrationActivity.class));
             }
         });
 
-        login =(Button) view.findViewById(R.id.btnSignIn);
+        login =(Button) findViewById(R.id.btnSignIn);
         login.setOnClickListener(new View.OnClickListener(){
             @Override
             public void onClick(View v) {
@@ -54,11 +55,12 @@ public class LoginFragment extends Fragment {
                 String pwd=   txtPassword.getText().toString();
 
                 userLogin(user,pwd);
+                login.setEnabled(false);
+                //findViewById(R.id.txt)
                 //Toast.makeText(getActivity(),"Login",Toast.LENGTH_SHORT).show();
             }
         });
 
-        return view;
     }
 
 
@@ -74,7 +76,10 @@ public class LoginFragment extends Fragment {
                         if (response.isSuccessful()) {
                             if (response.body() != null) {
                                 Log.i("onSuccessLogin", response.body().toString());
-                                LocalRepository.getInstance().saveUser(sUNa,sPw,true);
+                                Toast.makeText(getApplicationContext(),"Login successfull", Toast.LENGTH_LONG).show();
+                                LocalRepository.getInstance().saveUser(sUNa,sPw, true);
+                                startActivity(new Intent(getApplicationContext(),MainDashboardActivity.class));
+                                finish();
                             } else {
                                 Log.i("onEmptyResponse", "Returned empty response");//Toast.makeText(getContext(),"Nothing returned",Toast.LENGTH_LONG).show();
                             }
@@ -85,6 +90,7 @@ public class LoginFragment extends Fragment {
                     public void onFailure(Call<String> call, Throwable t) {
                         Log.i("onFailure", t.toString());
                         t.printStackTrace();
+                        Toast.makeText(getApplicationContext(),"Invalid login", Toast.LENGTH_LONG).show();
                     }
                 });
     }

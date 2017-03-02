@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.ImageButton;
 
 import org.neosoft.com.JHU.R;
+import org.neosoft.com.JHU.service.LocalRepository;
 
 public class SplashActivity extends AppCompatActivity implements View.OnClickListener {
     private ImageButton imgEnglish;
@@ -24,8 +25,13 @@ public class SplashActivity extends AppCompatActivity implements View.OnClickLis
     public void onClick(View v) {
         switch(v.getId()){
             case R.id.btnEnglish:
-                startActivity(new Intent(getApplicationContext(),MainDashboardActivity.class));
-                finish();
+                if(LocalRepository.getInstance().isAuthenticated()){
+                    startActivity(new Intent(getApplicationContext(),MainDashboardActivity.class));
+                    finish();
+                }else{
+                    startActivity(new Intent(getApplicationContext(),LoginActivity.class));
+                    finish();
+                }
                 break;
         }
     }
