@@ -58,7 +58,7 @@ public class GalleryFragment extends Fragment {
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.values), R.drawable.one));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.history), R.drawable.two));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.leaders), R.drawable.three));
-        allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.news), R.drawable.four));
+        allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.message), R.drawable.four));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.membership), R.drawable.five));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.poll), R.drawable.six));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.events), R.drawable.seven));

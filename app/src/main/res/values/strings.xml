@@ -17,7 +17,7 @@
     <string name="values">Values</string>
     <string name="history">History</string>
     <string name="leaders">Leaders</string>
-    <string name="news">Login</string>
+    <string name="message">Message</string>
     <string name="membership">Membership</string>
     <string name="poll">Poll</string>
     <string name="events">Events</string>
@@ -49,5 +49,17 @@
     <string name="Apply">Apply for Membership</string>
     <string name="Cancel">Cancel</string>
 
+    <string name="ResetPwd">Reset Password</string>
+
+    <string name="LeadersMessage">Below is a sample of “Lorem ipsum dolor sit” dummy copy text often used to show font face samples,
+        for page layout and design as sample layout text by printers, graphic designers, Web designers,
+        people creating Microsoft Word templates, and many other uses.
+        It mimics the look of real text quite well as you design and set up your page layouts.
+        People search for this Lorem ipsum dummy copy text using all kinds of names, such as Lorem ipsum,
+        lorem ipsum dolor sit amet, Lorem, dummy text, loren ipsum (yes, spelled wrong),
+        Lorem ipsum sample textipsum loremlorem ipsum sample, Latin copy text, Lorem ipsum text,
+        Latin dummy text, template text, sample text, dummy copy text, Latin sample text, HTML dummy text,
+        Lorem ipsum dummy text, filler text or copy filling text, and many other names.
+        Regardless of what you wish to call it, this text </string>
 
 </resources>

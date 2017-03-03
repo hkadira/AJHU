@@ -53,6 +53,16 @@
                 android:inputType="textPassword"
                 android:textColor="@android:color/black" />
 
+            <TextView
+                android:id="@+id/reset"
+                android:layout_width="250dp"
+                android:layout_height="45dp"
+                android:gravity="center"
+                android:autoLink="all"
+                android:linksClickable="true"
+                android:textColor="@android:color/holo_red_dark"
+                android:text="@string/ResetPwd"/>
+
             <Button
                 android:id="@+id/btnSignIn"
                 android:layout_width="250dp"

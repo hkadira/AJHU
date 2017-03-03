@@ -47,13 +47,13 @@ public class RegistrationActivity extends AppCompatActivity {
         txtDistrict = (EditText) findViewById(R.id.edTxtDistrict);
 
         //TODO- Dummy data
-        txtName.setText("SNa1");
+        /*txtName.setText("SNa1");
         txtUsername.setText("UNa1");
         txtPassword.setText("Pw1");
         txtPhone.setText("Phone1");
         txtEmail.setText("Emali1");
         txtAddress.setText("Add1");
-        txtDistrict.setText("Dis1");
+        txtDistrict.setText("Dis1");*/
 
         // Inflate the layout for this fragment
         membership = (Button) findViewById(R.id.btnMembership);
