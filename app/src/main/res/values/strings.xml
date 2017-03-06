@@ -1,5 +1,6 @@
 <resources>
     <string name="app_name">Jathika Hela Urumaya</string>
+    <string name="sinhala">සිංහල</string>
     <string name="action_settings">Settings</string>
     <string name="action_refresh">Settings</string>
     <string name="action_new">Settings</string>
@@ -49,7 +50,7 @@
     <string name="Apply">Apply for Membership</string>
     <string name="Cancel">Cancel</string>
 
-    <string name="ResetPwd">Reset Password</string>
+    <string name="chart">Pie Chart</string>
 
     <string name="LeadersMessage">Below is a sample of “Lorem ipsum dolor sit” dummy copy text often used to show font face samples,
         for page layout and design as sample layout text by printers, graphic designers, Web designers,
@@ -61,5 +62,7 @@
         Latin dummy text, template text, sample text, dummy copy text, Latin sample text, HTML dummy text,
         Lorem ipsum dummy text, filler text or copy filling text, and many other names.
         Regardless of what you wish to call it, this text </string>
+
+    <string name="ResetPwd">Reset Password</string>
 
 </resources>

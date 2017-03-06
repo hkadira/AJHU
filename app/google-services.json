@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "265294210706",
+    "firebase_url": "https://ajhu-6bc6e.firebaseio.com",
+    "project_id": "ajhu-6bc6e",
+    "storage_bucket": "ajhu-6bc6e.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:265294210706:android:eb7139bd4c5ae7b7",
+        "android_client_info": {
+          "package_name": "org.neosoft.com.JHU"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "265294210706-tk88g7ar1mlb506ctblva8cct6gct7fo.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC6PbPjkBhm7PpmJfBOknh2wqijK-OCfqI"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

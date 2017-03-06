@@ -13,6 +13,7 @@ import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.activity.MainDashboardActivity;
+import org.neosoft.com.JHU.fragments.GraphFragment;
 import org.neosoft.com.JHU.fragments.HistoryFragment;
 import org.neosoft.com.JHU.fragments.LeadersAllListFragment;
 import org.neosoft.com.JHU.fragments.LeadershipMessageFragment;
@@ -48,9 +49,12 @@ public class RecyclerViewHoldersGallery extends RecyclerView.ViewHolder implemen
                 transaction.commit();
                 break;
             case 3:
-                //transaction.replace(R.id.container, new TestFragment());
-                //transaction.replace(R.id.container, new LoginFragment());
                 transaction.replace(R.id.container, new LeadershipMessageFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
+            case 5:
+                transaction.replace(R.id.container, new GraphFragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
                 break;

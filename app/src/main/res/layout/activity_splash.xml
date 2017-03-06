@@ -35,11 +35,10 @@
         android:background="@drawable/rounded_button"
         android:padding="15dp"
         android:scaleType="centerCrop"
-        android:src="@drawable/handfan"
-        android:text="සිංහල" />
+        android:src="@drawable/handfan" />
 
     <TextView
-        android:text="සිංහල"
+        android:text="@string/sinhala"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignBottom="@+id/btnSinhala"
