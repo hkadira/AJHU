@@ -36,12 +36,12 @@ dependencies {
     //Firebase dependenceis
     //Cordinator layout dependency - Snackbar widget
     //Oher dependencies
-    compile 'com.android.support:support-v4:24.2.1'
     //REST - retrofit dependencies
+    compile 'com.android.support:support-v4:24.2.1'
+    compile 'com.android.support:support-v4:24.2.1'
     compile 'com.github.PhilJay:MPAndroidChart:v2.1.6'
     compile 'com.google.firebase:firebase-core:10.2.0'
     compile 'com.google.firebase:firebase-messaging:10.2.0'
-    compile 'com.android.support:support-v4:24.2.1'
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support:recyclerview-v7:24.2.1'

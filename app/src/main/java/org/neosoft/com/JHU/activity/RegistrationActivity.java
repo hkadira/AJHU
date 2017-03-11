@@ -2,12 +2,22 @@ package org.neosoft.com.JHU.activity;
 
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
+import android.support.design.widget.CoordinatorLayout;
+import android.support.design.widget.Snackbar;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.util.Log;
+import android.util.Patterns;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
@@ -24,8 +34,9 @@ public class RegistrationActivity extends AppCompatActivity {
     private EditText txtEmail;
     private EditText txtPhone;
     private EditText txtAddress;
-    private EditText txtDistrict;
+    private Spinner txtDistrict;
 
+    CoordinatorLayout coordinatorLayout;
 
     String ROOT_URL = "http://localhost/JHU";
     //public static final String BASE_URL = "http://192.168.1.3:80/JHU";
@@ -44,7 +55,9 @@ public class RegistrationActivity extends AppCompatActivity {
         txtEmail = (EditText) findViewById(R.id.edTxtEmail);
         txtPhone = (EditText) findViewById(R.id.edTxtPhone);
         txtAddress = (EditText) findViewById(R.id.edTxtAdd);
-        txtDistrict = (EditText) findViewById(R.id.edTxtDistrict);
+        txtDistrict = (Spinner) findViewById(R.id.district);
+
+        coordinatorLayout = (CoordinatorLayout) findViewById(R.id.rCoordinatorLayout);
 
         //TODO- Dummy data
         /*txtName.setText("SNa1");
@@ -60,10 +73,18 @@ public class RegistrationActivity extends AppCompatActivity {
         membership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getActivity(), "Test Registration", Toast.LENGTH_LONG).show();
-                registerUser(txtName.getText().toString().trim(), txtUsername.getText().toString().trim(),
-                        txtPassword.getText().toString().trim(), txtPhone.getText().toString().trim(),
-                        txtEmail.getText().toString().trim(), txtAddress.getText().toString().trim(), txtDistrict.getText().toString().trim());
+                Toast.makeText(getApplicationContext(), String.valueOf(validateData()), Toast.LENGTH_LONG).show();
+
+                if (validateData()){
+                    snackBarMessage("User registered successfully");
+                    registerUser(txtName.getText().toString().trim(), txtUsername.getText().toString().trim(),
+                            txtPassword.getText().toString().trim(), txtPhone.getText().toString().trim(),
+                            txtEmail.getText().toString().trim(), txtAddress.getText().toString().trim(),
+                            txtDistrict.getSelectedItem().toString().trim());
+                }/*else{
+                    snackBarMessage("Fill all the informations");
+                }*/
+
             }
         });
 
@@ -87,7 +108,7 @@ public class RegistrationActivity extends AppCompatActivity {
                         Log.i("Response", response.body().toString());
                         //Toast.makeText()
                         if (response.isSuccessful()) {
-                            if (response.body() != null) {
+                            if (response.body().equals("successfully registered")) {
                                 Log.i("onSuccessRegistration", response.body().toString());
                                 Toast.makeText(getApplicationContext(),"You have successfully registered.",Toast.LENGTH_SHORT).show();
                                 startActivity(new Intent(getApplicationContext(),LoginActivity.class));
@@ -104,5 +125,41 @@ public class RegistrationActivity extends AppCompatActivity {
                         t.printStackTrace();
                     }
                 });
+    }
+
+    public boolean validateData() {
+        if ((TextUtils.isEmpty(txtName.getText()) ||
+                (TextUtils.isEmpty(txtUsername.getText())) ||
+                (TextUtils.isEmpty(txtPassword.getText())) ||
+                (TextUtils.isEmpty(txtEmail.getText())) ||
+                (TextUtils.isEmpty(txtPhone.getText())) ||
+                (TextUtils.isEmpty(txtAddress.getText())))) {
+                snackBarMessage("Fill all the informations");
+                return false;
+        }else if(txtDistrict.getSelectedItem().equals("- Select District -")){
+                snackBarMessage("Select a valid district");
+                return false;
+        }else if (!Patterns.EMAIL_ADDRESS.matcher(txtEmail.getText()).matches()) {
+                txtEmail.setError("Invalid Email");
+                return false;
+        }else {
+                return true;
+        }
+    }
+
+    public void snackBarMessage(String message){
+        Snackbar snackbar = Snackbar.make(coordinatorLayout, message , Snackbar.LENGTH_LONG);
+        View mView = snackbar.getView();
+        mView.setBackgroundColor(Color.RED);
+        //mView.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        TextView tv = (TextView) mView.findViewById(android.support.design.R.id.snackbar_text);
+        tv.setTextColor(ContextCompat.getColor(RegistrationActivity.this, android.R.color.white));
+
+        // set text to center
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.JELLY_BEAN_MR1)
+            tv.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+        else
+            tv.setGravity(Gravity.CENTER_HORIZONTAL);
+        snackbar.show();
     }
 }

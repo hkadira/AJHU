@@ -46,7 +46,7 @@ public class RegistrationFragment extends Fragment {
         txtEmail = (EditText) view.findViewById(R.id.edTxtEmail);
         txtPhone = (EditText) view.findViewById(R.id.edTxtPhone);
         txtAddress = (EditText) view.findViewById(R.id.edTxtAdd);
-        txtDistrict = (EditText) view.findViewById(R.id.edTxtDistrict);
+        txtDistrict = (EditText) view.findViewById(R.id.district);
 
         //TODO- Dummy data
         txtName.setText("SNa1");
@@ -62,10 +62,15 @@ public class RegistrationFragment extends Fragment {
         membership.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                //Toast.makeText(getActivity(), "Test Registration", Toast.LENGTH_LONG).show();
-                registerUser(txtName.getText().toString().trim(), txtUsername.getText().toString().trim(),
-                        txtPassword.getText().toString().trim(), txtPhone.getText().toString().trim(),
-                        txtEmail.getText().toString().trim(), txtAddress.getText().toString().trim(), txtDistrict.getText().toString().trim());
+                /*if(validateData()){
+                    //Toast.makeText(getActivity(), "Test Registration", Toast.LENGTH_LONG).show();
+                    registerUser(txtName.getText().toString().trim(), txtUsername.getText().toString().trim(),
+                            txtPassword.getText().toString().trim(), txtPhone.getText().toString().trim(),
+                            txtEmail.getText().toString().trim(), txtAddress.getText().toString().trim(),
+                            txtDistrict.getText().toString().trim());
+                }else {
+
+                }*/
             }
         });
 
@@ -105,4 +110,7 @@ public class RegistrationFragment extends Fragment {
                     }
                 });
     }
+
+
+
 }

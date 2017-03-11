@@ -23,7 +23,7 @@
     <string name="poll">Poll</string>
     <string name="events">Events</string>
     <string name="profile">Profile</string>
-    <string name="feeds">News</string>
+    <string name="news">News</string>
     //Leaders
     <string name="pathali">Pathali Champika Ranawaka</string>
     <string name="rathana">Athuraliye Rathana Thero</string>
@@ -39,8 +39,8 @@
 
     //Registration Page
     <string name="MR">Memeber Registration</string>
-    <string name="Name">Name</string>
-    <string name="UName">User Name</string>
+    <string name="Name">Full Name</string>
+    <string name="UName">NIC</string>
     <string name="Pwd">Password</string>
     <string name="Phone">Phone</string>
     <string name="Email">Email</string>
@@ -64,5 +64,35 @@
         Regardless of what you wish to call it, this text </string>
 
     <string name="ResetPwd">Reset Password</string>
+
+    //District list
+    <string-array name="district_array">
+        <item>- Select District -</item>
+        <item>Ampara</item>
+        <item>Anuradhapura</item>
+        <item>Badulla</item>
+        <item>Batticalo</item>
+        <item>Colombo</item>
+        <item>Galle</item>
+        <item>Gampaha</item>
+        <item>Hambantota</item>
+        <item>Jaffna</item>
+        <item>Kalutara</item>
+        <item>Kandy</item>
+        <item>Kegalle</item>
+        <item>Kilinochchi</item>
+        <item>Kurunegala</item>
+        <item>Mannar</item>
+        <item>Matale</item>
+        <item>Matara</item>
+        <item>Moneragala</item>
+        <item>Mullaitiv</item>
+        <item>Nuwara Eliya</item>
+        <item>Polonnaruwa</item>
+        <item>Puttalam</item>
+        <item>Ratnapura</item>
+        <item>Trincomalee</item>
+        <item>Vavuniya</item>
+    </string-array>
 
 </resources>

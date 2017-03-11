@@ -1,6 +1,7 @@
 package org.neosoft.com.JHU.activity;
 
 
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -8,6 +9,9 @@ import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.view.Window;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
@@ -72,6 +76,21 @@ public class MainDashboardActivity extends AppCompatActivity {
         }
         if(id == R.id.about){
             Toast.makeText(MainDashboardActivity.this, "About menu", Toast.LENGTH_LONG).show();
+
+            final Dialog dialog = new Dialog(this);
+            dialog.requestWindowFeature(Window.FEATURE_NO_TITLE);
+            dialog.setContentView(R.layout.custom_dialog_about);
+            //dialog.setTitle("About");
+
+            ImageButton dialogButton = (ImageButton) dialog.findViewById(R.id.btnExit);
+            // if button is clicked, close the custom dialog
+            dialogButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    dialog.dismiss();
+                }
+            });
+            dialog.show();
         }
 
         if(id == R.id.exit){

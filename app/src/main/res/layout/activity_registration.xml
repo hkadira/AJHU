@@ -1,119 +1,132 @@
 <layout>
-
-    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/rCoordinatorLayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical"
-        tools:context="org.neosoft.com.JHU.fragments.RegistrationFragment">
+        android:background="@drawable/gradient"
+        android:gravity="center"
+        tools:context="org.neosoft.com.JHU.fragments.LoginFragment">
 
-        <!-- TODO: Update blank fragment layout -->
-
-        <EditText
+        <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
             android:layout_width="match_parent"
-            android:layout_height="40dp"
-            android:background="@android:color/holo_orange_dark"
-            android:gravity="center"
-            android:text="@string/MR" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            tools:context="org.neosoft.com.JHU.fragments.RegistrationFragment">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:layout_weight="1"
-            android:orientation="vertical">
+            <!-- TODO: Update blank fragment layout -->
 
             <EditText
-                android:id="@+id/edTxtName"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
                 android:layout_width="match_parent"
-                android:ems="10"
-                android:hint="@string/Name"
-                android:inputType="textPersonName" />
+                android:layout_height="40dp"
+                android:background="@android:color/holo_orange_dark"
+                android:gravity="center"
+                android:text="@string/MR" />
 
-            <EditText
-                android:id="@+id/edTxtUName"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
-                android:hint="@string/UName"
-                android:layout_marginTop="5dp"
-                android:inputType="textPersonName" />
+                android:layout_height="wrap_content"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                android:orientation="vertical">
 
-            <EditText
-                android:id="@+id/edTxtPwd"
-                android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
-                android:layout_marginTop="5dp"
-                android:hint="@string/Pwd"
-                android:inputType="textPassword" />
+                <EditText
+                    android:id="@+id/edTxtName"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:ems="10"
+                    android:hint="@string/Name"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
 
-            <EditText
-                android:id="@+id/edTxtPhone"
-                android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
-                android:layout_marginTop="5dp"
-                android:hint="@string/Phone"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/edTxtUName"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:ems="10"
+                    android:hint="@string/UName"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
 
-            <EditText
-                android:id="@+id/edTxtEmail"
-                android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
-                android:layout_marginTop="5dp"
-                android:hint="@string/Email"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/edTxtPwd"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:ems="10"
+                    android:hint="@string/Pwd"
+                    android:inputType="textPassword"
+                    android:paddingLeft="10dp" />
 
-            <EditText
-                android:id="@+id/edTxtAdd"
-                android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
-                android:hint="@string/Address"
-                android:layout_marginTop="5dp"
-                android:inputType="textPersonName" />
+                <EditText
+                    android:id="@+id/edTxtPhone"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:ems="10"
+                    android:hint="@string/Phone"
+                    android:inputType="phone"
+                    android:paddingLeft="10dp" />
 
-            <EditText
-                android:id="@+id/edTxtDistrict"
+                <EditText
+                    android:id="@+id/edTxtEmail"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:ems="10"
+                    android:hint="@string/Email"
+                    android:inputType="textEmailAddress"
+                    android:paddingLeft="10dp" />
+
+                <EditText
+                    android:id="@+id/edTxtAdd"
+                    android:layout_width="match_parent"
+                    android:layout_height="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:ems="10"
+                    android:hint="@string/Address"
+                    android:inputType="textPersonName"
+                    android:paddingLeft="10dp" />
+
+
+                <Spinner
+                    android:id="@+id/district"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="30dp"
+                    android:background="@drawable/roundedtextbox"
+                    android:paddingBottom="5dp"
+                    android:paddingTop="5dp"
+                    android:layout_marginTop="5dp"
+                    android:entries="@array/district_array"
+                    android:textSize="12dp" />
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/btnMembership"
                 android:layout_width="match_parent"
-                android:paddingLeft="10dp"
-                android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
-                android:layout_marginTop="5dp"
-                android:hint="@string/District"
-                android:inputType="textPersonName" />
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@android:color/holo_green_dark"
+                android:text="@string/Apply" />
+
+            <Button
+                android:id="@+id/btnCancel"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="2dp"
+                android:background="@android:color/holo_orange_dark"
+                android:text="@string/Cancel" />
         </LinearLayout>
 
-        <Button
-            android:id="@+id/btnMembership"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@android:color/holo_green_dark"
-            android:text="@string/Apply" />
-
-        <Button
-            android:id="@+id/btnCancel"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="2dp"
-            android:background="@android:color/holo_orange_dark"
-            android:text="@string/Cancel" />
-    </LinearLayout>
+    </android.support.design.widget.CoordinatorLayout>
 </layout>

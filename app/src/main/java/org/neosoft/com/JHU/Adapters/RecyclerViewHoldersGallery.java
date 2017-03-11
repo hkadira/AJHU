@@ -13,10 +13,14 @@ import android.widget.Toast;
 
 import org.neosoft.com.JHU.R;
 import org.neosoft.com.JHU.activity.MainDashboardActivity;
+import org.neosoft.com.JHU.fragments.EventFragment;
 import org.neosoft.com.JHU.fragments.GraphFragment;
 import org.neosoft.com.JHU.fragments.HistoryFragment;
 import org.neosoft.com.JHU.fragments.LeadersAllListFragment;
 import org.neosoft.com.JHU.fragments.LeadershipMessageFragment;
+import org.neosoft.com.JHU.fragments.MembershipFragment;
+import org.neosoft.com.JHU.fragments.NewsFragment;
+import org.neosoft.com.JHU.fragments.ProfileFragment;
 
 public class RecyclerViewHoldersGallery extends RecyclerView.ViewHolder implements View.OnClickListener{
 
@@ -53,8 +57,28 @@ public class RecyclerViewHoldersGallery extends RecyclerView.ViewHolder implemen
                 transaction.addToBackStack(null);
                 transaction.commit();
                 break;
+            case 4:
+                transaction.replace(R.id.container, new MembershipFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
             case 5:
                 transaction.replace(R.id.container, new GraphFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
+            case 6:
+                transaction.replace(R.id.container, new EventFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
+            case 7:
+                transaction.replace(R.id.container, new ProfileFragment());
+                transaction.addToBackStack(null);
+                transaction.commit();
+                break;
+            case 8:
+                transaction.replace(R.id.container, new NewsFragment());
                 transaction.addToBackStack(null);
                 transaction.commit();
                 break;

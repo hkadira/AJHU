@@ -63,7 +63,7 @@ public class GalleryFragment extends Fragment {
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.poll), R.drawable.six));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.events), R.drawable.seven));
         allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.profile), R.drawable.eight));
-        allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.feeds), R.drawable.one));
+        allItems.add(new DashboardGalleryItemObject(getResources().getString(R.string.news), R.drawable.one));
 
         return allItems;
     }

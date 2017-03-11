@@ -28,4 +28,10 @@ public interface APIService {
             @Field("username") String username,
             @Field("password") String password);
 
+    @FormUrlEncoded
+    @POST("/update.php")
+    Call<String> resetPassword(
+            @Field("username") String username,
+            @Field("password") String password);
+
 }

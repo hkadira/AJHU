@@ -64,7 +64,7 @@
                 android:ems="10"
                 android:layout_marginTop="5dp"
                 android:hint="@string/Phone"
-                android:inputType="textPersonName" />
+                android:inputType="phone" />
 
             <EditText
                 android:id="@+id/edTxtEmail"
@@ -75,7 +75,7 @@
                 android:ems="10"
                 android:layout_marginTop="5dp"
                 android:hint="@string/Email"
-                android:inputType="textPersonName" />
+                android:inputType="textEmailAddress" />
 
             <EditText
                 android:id="@+id/edTxtAdd"
@@ -88,16 +88,17 @@
                 android:layout_marginTop="5dp"
                 android:inputType="textPersonName" />
 
-            <EditText
-                android:id="@+id/edTxtDistrict"
+            <Spinner
+                android:id="@+id/district"
                 android:layout_width="match_parent"
-                android:paddingLeft="10dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
                 android:background="@drawable/roundedtextbox"
-                android:layout_height="30dp"
-                android:ems="10"
+                android:paddingBottom="5dp"
+                android:paddingTop="5dp"
                 android:layout_marginTop="5dp"
-                android:hint="@string/District"
-                android:inputType="textPersonName" />
+                android:entries="@array/district_array"
+                android:textSize="14dp" />
         </LinearLayout>
 
         <Button
